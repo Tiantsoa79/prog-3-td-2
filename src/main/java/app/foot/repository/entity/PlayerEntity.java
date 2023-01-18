@@ -1,9 +1,11 @@
 package app.foot.repository.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "player")
 @Data
 @EqualsAndHashCode

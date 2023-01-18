@@ -16,12 +16,26 @@ public class PlayerMapper {
                 .isGuardian(entity.isGuardian())
                 .build();
     }
-
+    public  PlayerEntity toRest(Player player) {
+        return PlayerEntity.builder()
+                .id(player.getId())
+                .name(player.getName())
+                .guardian(player.getIsGuardian())
+                .build();
+    }
     public PlayerScorer toDomain(PlayerScoreEntity entity) {
         return PlayerScorer.builder()
                 .player(toDomain(entity.getPlayer()))
                 .minute(entity.getMinute())
                 .isOwnGoal(entity.isOwnGoal())
+                .build();
+    }
+
+    public PlayerScoreEntity toDomain(PlayerScorer playerScorer) {
+        return PlayerScoreEntity.builder()
+                .player(toRest(playerScorer.getPlayer()))
+                .minute(playerScorer.getMinute())
+                .ownGoal(playerScorer.getIsOwnGoal())
                 .build();
     }
 }

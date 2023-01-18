@@ -37,6 +37,7 @@ public class MatchMapper {
                 .build();
     }
 
+
     private List<PlayerScorer> getTeamScorers(MatchEntity matchEntity, TeamEntity team) {
         return matchEntity.getScorers().stream()
                 .filter(scorer -> isGoalAgainstOpponent(team, scorer) || isOpponentOwnGoal(team, scorer))
