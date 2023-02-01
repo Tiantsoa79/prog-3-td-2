@@ -1,14 +1,16 @@
 package app.foot.repository.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity(name = "player")
 @Data
 @EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Getter
 public class PlayerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

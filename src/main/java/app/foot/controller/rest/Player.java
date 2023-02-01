@@ -1,16 +1,16 @@
-package app.foot.model;
+package app.foot.controller.rest;
 
 import lombok.*;
-
-import java.util.Objects;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Builder
+@Builder(toBuilder = true)
 @ToString
 @EqualsAndHashCode
-public class Team {
+public class Player {
     private Integer id;
     private String name;
+    private String teamName;
+    private Boolean isGuardian;
 }

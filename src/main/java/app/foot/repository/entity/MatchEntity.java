@@ -6,12 +6,12 @@ import lombok.*;
 import java.time.Instant;
 import java.util.List;
 
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity(name = "match")
 @Data
 @EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class MatchEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

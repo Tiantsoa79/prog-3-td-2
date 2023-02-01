@@ -1,16 +1,16 @@
 package app.foot.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Builder
+@ToString
+@EqualsAndHashCode
 public class Player {
     private Integer id;
     private String name;
     private Boolean isGuardian;
+    private String teamName;
 }

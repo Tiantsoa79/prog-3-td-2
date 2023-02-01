@@ -1,16 +1,14 @@
-package app.foot.model;
+package app.foot.controller.rest;
 
 import lombok.*;
-
-import java.util.Objects;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Builder
-@ToString
 @EqualsAndHashCode
+@ToString
 public class Team {
-    private Integer id;
-    private String name;
+  private Integer id;
+  private String name;
 }

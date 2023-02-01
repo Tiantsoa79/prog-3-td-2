@@ -1,16 +1,15 @@
 package app.foot.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Instant;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Builder
+@Data
+@Builder(toBuilder = true)
+@EqualsAndHashCode
+@ToString
 public class Match {
     private Integer id;
     private TeamMatch teamA;
