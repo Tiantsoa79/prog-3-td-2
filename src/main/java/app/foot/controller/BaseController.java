@@ -25,7 +25,7 @@ public class BaseController {
     @ExceptionHandler(value = {BadRequestException.class})
     ResponseEntity<RestException> handleBadRequest(
             BadRequestException e) {
-        log.info("Bad request", e);
+        log.info("A bad request exception was handled", e);
 
         return new ResponseEntity<>(toRest(e, HttpStatus.BAD_REQUEST), HttpStatus.BAD_REQUEST);
 
@@ -34,20 +34,20 @@ public class BaseController {
     @ExceptionHandler(value = {MissingServletRequestParameterException.class})
     ResponseEntity<RestException> handleBadRequest(
             MissingServletRequestParameterException e) {
-        log.info("Missing parameter", e);
+        log.info("Missing parameter exception was handled", e);
         return handleBadRequest(new BadRequestException(e.getMessage()));
     }
 
     @ExceptionHandler(value = {NotFoundException.class})
     ResponseEntity<RestException> handleNotFound(
             NotFoundException e) {
-        log.info("Not found", e);
+        log.info("Not found exception was handled", e);
         return new ResponseEntity<>(toRest(e, HttpStatus.NOT_FOUND), HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(value = {java.lang.Exception.class})
     ResponseEntity<RestException> handleDefault(java.lang.Exception e) {
-        log.error("Internal error", e);
+        log.error("Internal error exception was handled", e);
         return new ResponseEntity<>(
                 toRest(e, HttpStatus.INTERNAL_SERVER_ERROR),
                 HttpStatus.INTERNAL_SERVER_ERROR);
